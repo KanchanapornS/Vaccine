@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>การฉีดวัคซีนป้องกันโควิด-19</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>ลงทะเบียนเข้ารับบริการฉีดวัคซีน</h1>
+        <form id="vaccineForm">
+            <label for="fullName">ชื่อ-นามสกุล:</label>
+            <input type="text" placeholder="กรอกชื่อ-นามสกุล" id="fullName" required>
+
+            <label for="idCardInput">เลขบัตรประชาชน:</label>
+            <input type="text"  placeholder="กรอกเลขบัตรประชาชน" id="idCardInput" onkeypress="IDCardValidator.preventNonNumeric(event)" oninput="IDCardValidator.maskIdCardInput()" maxlength="13" required>
+
+            <label for="gender">เพศ:</label>
+            <select id="gender" required>
+                <option value="">เลือกเพศ</option>
+                <option value="male">ชาย</option>
+                <option value="female">หญิง</option>
+            </select>
+
+            <label for="datePicker">วัน/เดือน/ปี เกิด:</label>
+            <input type="date" id="datePicker" required max="">
+
+            <button type="button" onclick="IDCardValidator.validate()">ยืนยันข้อมูล</button>
+            <button type="button" onclick="IDCardValidator.clearForm()">ล้างค่า</button>
+        </form>
+
+        <!-- Confirmation Popup -->
+        <div id="confirmationPopup" class="popup">
+            <div class="popup-content">
+                <span class="close" onclick="IDCardValidator.closePopup()">&times;</span>
+                <h2>ยืนยันข้อมูล</h2>
+                <p id="popupMessage"></p>
+                <button onclick="IDCardValidator.closePopup()" class="btn-back">ย้อนกลับ</button>
+                <button onclick="IDCardValidator.displayResult()" class="btn-next">ตรวจสอบข้อมูล</button>
+            </div>
+        </div>
+
+        <!-- Result Popup -->
+        <div id="resultPopup" class="popup" style="display: none;">
+            <div class="popup-content">
+                <span class="close" onclick="IDCardValidator.closeResultPopup()">&times;</span>
+                <h2>ผลการตรวจสอบ</h2>
+                <p id="resultMessage"></p>
+                <button onclick="IDCardValidator.closeResultPopup()" class="btn-back">ปิด</button>
+            </div>
+        </div>
+
+        <div id="resultScreen" style="display: none;">
+            <p id="resultName"></p>
+            <p id="resultID"></p>
+            <p id="resultGender"></p>
+            <p id="resultDOB"></p>
+            <p id="resultStatus"></p>
+            <button id="backBtn">ย้อนกลับ</button>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+
+</html>

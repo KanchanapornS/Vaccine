@@ -1,0 +1,120 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #4a90e2, #9013fe);
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px; /* ความกว้างสูงสุดของ container */
+    margin: 0 auto; /* จัดกลาง */
+    background: white;
+    padding: 20px;
+    border-radius: 10px; /* มุมมน */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* เงา */
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: #343a40; /* สีข้อความ */
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+select {
+    width: 98.5%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #80bdff; /* สีกรอบ */
+    border-radius: 5px;
+    transition: border-color 0.2s; /* การเปลี่ยนแปลง */
+}
+input[type="text"],
+input[type="date"],
+input[type="password"],
+.select2 {
+    width: 95%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #80bdff;/* สีกรอบ */
+    border-radius: 5px;
+    transition: border-color 0.2s;/* การเปลี่ยนแปลง */
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="password"]:focus,
+select:focus {
+    border-color: #80bdff; /* สีเมื่อโฟกัส */
+    outline: none;
+}
+
+button {
+    background-color: #4c53e3; /* สีปุ่ม */
+    color: white;
+    border: none;
+    padding: 11px;
+    cursor: pointer;
+    border-radius: 5px; /* มุมมน */
+    margin-top: 15px;
+    transition: background-color 0.3s; /* การเปลี่ยนแปลง */
+    font-weight: bold; /* หนัก */
+    width: 98.5%; /* ให้ปุ่มเต็มความกว้าง */
+}
+
+button:hover {
+    background-color: #9013fe; /* สีเมื่อเลื่อนเมาส์ */
+}
+
+.popup {
+    display: none; /* ซ่อนป๊อปอัป */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 1000; /* ชั้นบน */
+    text-align: center;
+    background-color: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content {
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.popup-content h2 {
+    color: #333; /* สีข้อความ */
+}
+
+.popup .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #aaa; /* สีปุ่มปิด */
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.result-message {
+    font-size: 16px; /* ขนาดข้อความ */
+    margin-top: 20px;
+}
+
+.result-message span {
+    font-weight: bold; /* หนัก */
+}
